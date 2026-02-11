@@ -136,16 +136,18 @@
             .decor { transform: scale(0.7); }
             .main-img { width: 80vw; max-width: 600px; }
             .msg-box { font-size: 12px; max-width: 150px; padding: 8px 12px; }
-            .msg1 { top: 120px; left: 20px; }
-            .msg2 { bottom: 80px; left: 20px; }
-            .msg3 { top: 80px; right: 20px; }
-            .msg4 { bottom: 110px; right: 20px; }
+            .msg1 { top: 80px; left: 20px; }
+            .msg2 { bottom: 120px; left: 20px; }
+            .msg3 { top: 50px; right: 20px; }
+            .msg4 { bottom: 150px; right: 20px; }
             .bottom-nav-area { bottom: 20px; right: 30px; }
             .nav-text { font-size: 16px; }
             .nav-icon { width: 70px; }
             #startScreen img[src="images/bunnies.png"] { width: 200px; }
             #startScreen button { padding: 10px 30px; font-size: 14px; }
             #sadScreen img { width: 250px; }
+            #yayScreen img[src="images/happy-heart.png"] { left: 50%; transform: translateX(-50%) scale(0.7); }
+            #gift3 img[src="images/laptop heart.png"] { left: 20px; }
         }
     </style>
 </head>
@@ -197,9 +199,14 @@
         </div>
 
         <div id="gift2" class="hidden">
-            <h1 style="text-decoration: underline; margin-bottom: 5px;">Words from my Heart</h1>
+            <img src="images/kitty msg.png" class="decor" style="bottom: 20px; left: 40px; width: 200px; z-index: 5;">
+            <img src="images/msg img.png" class="decor" style="top: -10px; right: 20px; width: 200px; z-index: 5;">
+            <h1 style="position: absolute; top: 5px; left: 30px; text-decoration: underline;">Words from my Heart</h1>
+            <p style="position: absolute; top:60px; left: 230px; font-size: 16px; color: #880e4f; margin: 0;">With all my love ❤️</p>
             <div style="position: relative; width: 600px; display: flex; justify-content: center; align-items: center; height: 300px;">
-                <div style="position: relative; color: #d32f2f; font-size: 48px; font-weight: bold; text-align: center;">XOXO<br><br><p style="font-size: 16px; color: #880e4f;">With all my love ❤️</p></div>
+                <div style="background: rgba(255, 255, 255, 0.9); border: 2px solid #ffb3d9; border-radius: 15px; padding: 20px; width: 500px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                    <p style="color: #880e4f; font-size: 15px; margin: 0; text-align: justify; line-height: 1.6;">"I don't know what I ever did to deserve someone as beautiful and special as you, but I thank life every single day for bringing you into my world. From the moment you became a part of my life, everything started to feel brighter, warmer, and more meaningful. You are not just the person I love — you are the reason my heart feels full, the reason I smile without trying, and the reason I believe in forever. I promise to stand beside you through every happiness and every storm, to hold your hand when things get tough, and to remind you every single day how deeply you are loved. My feelings for you aren't temporary, they aren't fragile, and they aren't meant to fade with time — they are real, strong, and endless. I don't just want you for now, I want you for every tomorrow, every dream, and every chapter life writes for us. My goal, my wish, and my forever prayer is that we stay together for a lifetime, growing, laughing, loving, and building a story that time can never erase. No matter what happens, no matter where life takes us, one thing will never change — I will always love you, endlessly and completely." 💖</p>
+                </div>
             </div>
             <div class="bottom-nav-area" onclick="showScreen('gift3')">
                 <div class="nav-text">click me!</div>
