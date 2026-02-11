@@ -11,16 +11,19 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
             background-color: #fce4ec; 
             font-family: 'Comic Sans MS', 'Arial Rounded MT Bold', sans-serif;
-            overflow: hidden;
+            overflow-x: hidden;
+            padding: 10px;
         }
 
         .card {
             position: relative;
-            width: 900px;
-            height: 550px;
+            width: 90vw;
+            max-width: 900px;
+            height: auto;
+            min-height: 550px;
             background-color: #ffdae0; 
             border-radius: 20px;
             display: flex;
@@ -32,14 +35,14 @@
             padding: 20px;
         }
 
-        h1 { color: #d32f2f; font-size: 32px; margin: 10px 0; font-weight: bold; }
-        .subtitle { color: #880e4f; font-size: 18px; margin-bottom: 20px; }
+        h1 { color: #d32f2f; font-size: clamp(20px, 5vw, 32px); margin: 10px 0; font-weight: bold; }
+        .subtitle { color: #880e4f; font-size: clamp(14px, 3vw, 18px); margin-bottom: 20px; }
         
         /* Gift Selection Boxes */
-        .gift-container { display: flex; gap: 30px; margin-top: 10px; }
+        .gift-container { display: flex; gap: clamp(10px, 3vw, 30px); margin-top: 10px; flex-wrap: wrap; justify-content: center; }
         .gift-box {
-            width: 200px;
-            height: 120px;
+            width: clamp(120px, 25vw, 200px);
+            height: clamp(80px, 15vw, 120px);
             background-color: #ffb3b3;
             border: 2px solid #f06292;
             border-radius: 25px;
@@ -50,13 +53,13 @@
             font-weight: bold;
             cursor: pointer;
             text-decoration: underline;
-            font-size: 18px;
+            font-size: clamp(14px, 3vw, 18px);
         }
 
         /* Asset Styling */
-        .decor { position: absolute; pointer-events: none; }
-        .main-img { width: 250px; z-index: 2; margin: 10px 0; }
-        .qr-code { width: 220px; border: 5px solid white; border-radius: 10px; }
+        .decor { position: absolute; pointer-events: none; max-width: 90%; height: auto; }
+        .main-img { width: clamp(200px, 80vw, 850px); z-index: 2; margin: 10px 0; height: auto; }
+        .qr-code { width: clamp(150px, 50vw, 220px); border: 5px solid white; border-radius: 10px; }
 
         .hidden { display: none !important; }
 
@@ -90,21 +93,21 @@
             border-radius: 15px;
             padding: 10px 15px;
             color: #5a2a1f;
-            font-size: 14px;
+            font-size: clamp(11px, 2.5vw, 14px);
             position: absolute;
-            max-width: 200px;
+            max-width: clamp(150px, 30vw, 200px);
             box-shadow: inset 0 1px 0 rgba(255,255,255,0.6), 0 4px 10px rgba(0,0,0,0.05);
         }
-        .msg1 { top: 180px; left: 60px; } 
-        .msg2 { bottom: 120px; left: 80px; } 
-        .msg3 { top: 120px; right: 60px; } 
-        .msg4 { bottom: 150px; right: 80px; } 
+        .msg1 { top: clamp(80px, 20vh, 180px); left: clamp(10px, 5vw, 60px); } 
+        .msg2 { bottom: clamp(60px, 15vh, 120px); left: clamp(10px, 6vw, 80px); } 
+        .msg3 { top: clamp(60px, 15vh, 120px); right: clamp(10px, 5vw, 60px); } 
+        .msg4 { bottom: clamp(80px, 18vh, 150px); right: clamp(10px, 6vw, 80px); } 
 
         /* Consistent Bottom Right Navigation Area */
         .bottom-nav-area {
             position: absolute;
-            bottom: 40px;
-            right: 60px;
+            bottom: clamp(20px, 5vh, 40px);
+            right: clamp(20px, 5vw, 60px);
             cursor: pointer;
             z-index: 10;
             display: flex;
@@ -113,8 +116,8 @@
             justify-content: center;
             gap: 0;
         }
-        .nav-text { color: #d32f2f; font-size: 20px; margin: 0; line-height: 1; font-weight: bold; text-decoration: underline; }
-        .nav-icon { width: 90px; height: auto; transition: transform 0.2s; display: block; margin-top: -12px; }
+        .nav-text { color: #d32f2f; font-size: clamp(14px, 3vw, 20px); margin: 0; line-height: 1; font-weight: bold; text-decoration: underline; }
+        .nav-icon { width: clamp(60px, 12vw, 90px); height: auto; transition: transform 0.2s; display: block; margin-top: -12px; }
         .nav-icon:hover { transform: scale(1.2); }
 
         #sadScreen:not(.hidden) {
@@ -124,6 +127,14 @@
             align-items: center;
             width: 100%;
             height: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .card { min-height: 90vh; padding: 15px; }
+            .decor { display: none !important; }
+            .msg-box { position: static !important; margin: 5px; }
+            #gift1 { display: flex; flex-direction: column; gap: 10px; padding-top: 60px; }
+            #gift1 h1 { position: static !important; margin-bottom: 10px; }
         }
     </style>
 </head>
