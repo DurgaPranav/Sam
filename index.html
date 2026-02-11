@@ -8,29 +8,22 @@
         body {
             margin: 0;
             padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
             min-height: 100vh;
             background-color: #fce4ec; 
             font-family: 'Comic Sans MS', 'Arial Rounded MT Bold', sans-serif;
-            overflow-x: hidden;
+            overflow: hidden;
         }
 
         .card {
             position: relative;
-            width: 90vw;
-            max-width: 900px;
-            height: 90vh;
-            max-height: 550px;
+            width: 100vw;
+            height: 100vh;
             background-color: #ffdae0; 
-            border-radius: 20px;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
             padding: 20px;
             overflow: hidden;
         }
@@ -97,16 +90,16 @@
             max-width: 200px;
             box-shadow: inset 0 1px 0 rgba(255,255,255,0.6), 0 4px 10px rgba(0,0,0,0.05);
         }
-        .msg1 { top: 180px; left: 60px; } 
-        .msg2 { bottom: 120px; left: 80px; } 
-        .msg3 { top: 120px; right: 60px; } 
-        .msg4 { bottom: 150px; right: 80px; } 
+        .msg1 { top: 180px; left: 80px; } 
+        .msg2 { bottom: 140px; left: 100px; } 
+        .msg3 { top: 120px; right: 80px; } 
+        .msg4 { bottom: 170px; right: 100px; } 
 
         /* Consistent Bottom Right Navigation Area */
         .bottom-nav-area {
             position: absolute;
-            bottom: 10px;
-            right: 60px;
+            bottom: 40px;
+            right: 80px;
             cursor: pointer;
             z-index: 10;
             display: flex;
@@ -129,7 +122,7 @@
         }
 
         @media (max-width: 768px) {
-            .card { width: 95vw; height: 95vh; max-height: none; padding: 15px; }
+            .card { width: 100vw; height: 100vh; padding: 15px; }
             h1 { font-size: 20px; }
             .subtitle { font-size: 14px; }
             .gift-box { width: 120px; height: 80px; font-size: 14px; }
@@ -139,7 +132,7 @@
             .msg1 { top: 60px; left: 10px; }
             .msg2 { bottom: 100px; left: 10px; }
             .msg3 { top: 40px; right: 10px; }
-            .msg4 { bottom: 130px; right: 10px; }
+            .msg4 { bottom: 130px; right: 50px; }
             .bottom-nav-area { bottom: 15px; right: 20px; }
             .nav-text { font-size: 14px; }
             .nav-icon { width: 60px; margin-top: -10px; }
@@ -165,11 +158,11 @@
     <div class="card">
         
         <div id="startScreen">
-            <img src="images/heart wired.png" class="decor" style="top: -47px; left: -45px; width: 200px; z-index: 15;">
+            <img src="images/heart wired.png" class="decor" style="top: -45px; left: 20px; width: 250px; z-index: 15;">
 
-            <img src="images/feb 14.png" class="decor" style="top: -30px; right: -50px; width: 280px; z-index: 5;">
-            <img src="images/rocket.png" class="decor" style="bottom: -10px; left: -20px; width: 250px; z-index: 5;">
-            <img src="images/heart chocolate.png" class="decor" style="bottom: -40px; right: -25px; width: 250px; z-index: 5;">
+            <img src="images/feb 14.png" class="decor" style="top: 20px; right: 50px; width: 300px; z-index: 5;">
+            <img src="images/rocket.png" class="decor" style="bottom: 40px; left: 60px; width: 250px; z-index: 5;">
+            <img src="images/heart chocolate.png" class="decor" style="bottom: 40px; right: 50px; width: 300px; z-index: 5;">
             
             <img src="images/bunnies.png" style="width: 320px; margin: 0; margin-top: -90px;">
             <h1 style="margin-top: -30px;">Hey there, <br> Will you be my Valentine?</h1>
@@ -180,7 +173,7 @@
         </div>
 
         <div id="yayScreen" class="hidden">
-            <img src="images/happy-heart.png" class="decor" style="top: 10px; left: 20px; width: 150px;">
+            <img src="images/happy-heart.png" class="decor" style="top: 50%; left: 50%; transform: translate(-50%, -50%); width: 150px; z-index: 0; margin-top: -200px;">
             <h1>Yay, you said yes!</h1>
             <p class="subtitle">I made all these for you hehe</p>
             <div class="gift-container">
@@ -188,8 +181,8 @@
                 <div class="gift-box" onclick="showScreen('gift2')">Gift 2</div>
                 <div class="gift-box" onclick="showScreen('gift3')">Gift 3</div>
             </div>
-            <img src="images/fireworks.png" class="decor" style="bottom: -10px; left: -40px; width: 250px;">
-            <img src="images/mailbox.png" class="decor" style="bottom: 0; right: 20px; width: 140px;">
+            <img src="images/fireworks.png" class="decor" style="bottom: 40px; left: 10px; width: 300px;">
+            <img src="images/mailbox.png" class="decor" style="bottom: 50px; right: 80px; width: 200px;">
         </div>
 
         <div id="gift1" class="hidden">
@@ -208,10 +201,10 @@
         </div>
 
         <div id="gift2" class="hidden">
-            <img src="images/kitty msg.png" class="decor" style="bottom: 20px; left: 40px; width: 200px; z-index: 5;">
-            <img src="images/msg img.png" class="decor" style="top: -10px; right: 20px; width: 200px; z-index: 5;">
-            <h1 style="position: absolute; top: 5px; left: 30px; text-decoration: underline;">Words from my Heart</h1>
-            <p style="position: absolute; top:60px; left: 230px; font-size: 16px; color: #880e4f; margin: 0;">With all my love ❤️</p>
+            <img src="images/kitty msg.png" class="decor" style="bottom: 40px; left: 80px; width: 300px; z-index: 5;">
+            <img src="images/msg img.png" class="decor" style="top: 20px; right: 100px; width: 200px; z-index: 5;">
+            <h1 style="position: absolute; top: 10px; left: 60px; text-decoration: underline;">Words from my Heart</h1>
+            <p style="position: absolute; top:80px; left: 250px; font-size: 16px; color: #880e4f; margin: 0;">With all my love ❤️</p>
             <div style="position: relative; width: 600px; display: flex; justify-content: center; align-items: center; height: 300px;">
                 <div style="background: rgba(255, 255, 255, 0.9); border: 2px solid #ffb3d9; border-radius: 15px; padding: 20px; width: 500px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
                     <p style="color: #880e4f; font-size: 15px; margin: 0; text-align: justify; line-height: 1.6;">"I don't know what I ever did to deserve someone as beautiful and special as you, but I thank life every single day for bringing you into my world. From the moment you became a part of my life, everything started to feel brighter, warmer, and more meaningful. You are not just the person I love — you are the reason my heart feels full, the reason I smile without trying, and the reason I believe in forever. I promise to stand beside you through every happiness and every storm, to hold your hand when things get tough, and to remind you every single day how deeply you are loved. My feelings for you aren't temporary, they aren't fragile, and they aren't meant to fade with time — they are real, strong, and endless. I don't just want you for now, I want you for every tomorrow, every dream, and every chapter life writes for us. My goal, my wish, and my forever prayer is that we stay together for a lifetime, growing, laughing, loving, and building a story that time can never erase. No matter what happens, no matter where life takes us, one thing will never change — I will always love you, endlessly and completely." 💖</p>
@@ -224,8 +217,8 @@
         </div>
 
         <div id="gift3" class="hidden">
-            <img src="images/music kitty.png" class="decor" style="top: -10px; right: -10px; width: 200px; z-index: 5;">
-            <img src="images/laptop heart.png" class="decor" style="bottom: 50px; left: 80px; width: 150px; z-index: 5; transform: rotate(-15deg);">
+            <img src="images/music kitty.png" class="decor" style="top: 20px; right: 100px; width: 200px; z-index: 5;">
+            <img src="images/laptop heart.png" class="decor" style="bottom: 80px; left: 100px; width: 200px; z-index: 5; transform: rotate(-15deg);">
             <h1 style="position: absolute; top: 50px; left: 60px;">Scan the QR Code</h1>
             <div style="position: relative; display: flex; justify-content: center; align-items: center; width: 100%; height: 100%;">
                 <img src="images/FRAME (2).png" style="width: 430px; max-width: 80vw; height: auto; z-index: 1;">
